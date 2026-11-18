@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>双人默契大挑战 · 面对面 & 链接接力</title>
+
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+      background: linear-gradient(135deg, #fff1f2 0%, #fffbeb 50%, #fdf2f8 100%);
+      color: #2d1e26;
+      min-height: 100vh;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(244, 114, 182, 0.2);
+      box-shadow: 0 20px 50px -15px rgba(190, 24, 93, 0.12);
+    }
+    .option-btn {
+      transition: all 0.18s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .option-btn:hover {
+      transform: translateY(-2px);
+      border-color: #f472b6;
+      background-color: #fff1f5;
+    }
+    .option-btn.selected {
+      border-color: #db2777;
+      background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+      box-shadow: 0 8px 18px -6px rgba(219, 39, 119, 0.22);
+    }
+    .fade-in {
+      animation: fadeIn 0.32s ease-out forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+  <style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.inset-0{inset:0px}.bottom-6{bottom:1.5rem}.left-1\/2{left:50%}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.mb-0\.5{margin-bottom:0.125rem}.mb-1{margin-bottom:0.25rem}.mb-1\.5{margin-bottom:0.375rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-5{margin-bottom:1.25rem}.mb-6{margin-bottom:1.5rem}.mt-3{margin-top:0.75rem}.mt-8{margin-top:2rem}.block{display:block}.inline-block{display:inline-block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-14{height:3.5rem}.h-16{height:4rem}.h-2{height:0.5rem}.h-8{height:2rem}.h-9{height:2.25rem}.h-full{height:100%}.min-h-screen{min-height:100vh}.w-14{width:3.5rem}.w-16{width:4rem}.w-8{width:2rem}.w-9{width:2.25rem}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-lg{max-width:32rem}.max-w-md{max-width:28rem}.max-w-sm{max-width:24rem}.max-w-xs{max-width:20rem}.flex-1{flex:1 1 0%}.-translate-x-1\/2{--tw-translate-x:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1\.5{gap:0.375rem}.gap-2{gap:0.5rem}.gap-2\.5{gap:0.625rem}.gap-3{gap:0.75rem}.gap-3\.5{gap:0.875rem}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-2\.5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.625rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.625rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.25rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-full{border-radius:9999px}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-t{border-top-width:1px}.border-amber-200\/70{border-color:rgb(253 230 138 / 0.7)}.border-emerald-200\/70{border-color:rgb(167 243 208 / 0.7)}.border-pink-500{--tw-border-opacity:1;border-color:rgb(236 72 153 / var(--tw-border-opacity, 1))}.border-rose-100{--tw-border-opacity:1;border-color:rgb(255 228 230 / var(--tw-border-opacity, 1))}.border-rose-200{--tw-border-opacity:1;border-color:rgb(254 205 211 / var(--tw-border-opacity, 1))}.border-rose-200\/50{border-color:rgb(254 205 211 / 0.5)}.border-rose-200\/70{border-color:rgb(254 205 211 / 0.7)}.border-rose-200\/80{border-color:rgb(254 205 211 / 0.8)}.bg-amber-100{--tw-bg-opacity:1;background-color:rgb(254 243 199 / var(--tw-bg-opacity, 1))}.bg-amber-50\/80{background-color:rgb(255 251 235 / 0.8)}.bg-emerald-100{--tw-bg-opacity:1;background-color:rgb(209 250 229 / var(--tw-bg-opacity, 1))}.bg-emerald-50\/80{background-color:rgb(236 253 245 / 0.8)}.bg-pink-100{--tw-bg-opacity:1;background-color:rgb(252 231 243 / var(--tw-bg-opacity, 1))}.bg-pink-50{--tw-bg-opacity:1;background-color:rgb(253 242 248 / var(--tw-bg-opacity, 1))}.bg-pink-50\/70{background-color:rgb(253 242 248 / 0.7)}.bg-pink-600{--tw-bg-opacity:1;background-color:rgb(219 39 119 / var(--tw-bg-opacity, 1))}.bg-rose-100{--tw-bg-opacity:1;background-color:rgb(255 228 230 / var(--tw-bg-opacity, 1))}.bg-rose-50{--tw-bg-opacity:1;background-color:rgb(255 241 242 / var(--tw-bg-opacity, 1))}.bg-rose-50\/70{background-color:rgb(255 241 242 / 0.7)}.bg-rose-50\/80{background-color:rgb(255 241 242 / 0.8)}.bg-rose-500{--tw-bg-opacity:1;background-color:rgb(244 63 94 / var(--tw-bg-opacity, 1))}.bg-rose-600{--tw-bg-opacity:1;background-color:rgb(225 29 72 / var(--tw-bg-opacity, 1))}.bg-rose-950{--tw-bg-opacity:1;background-color:rgb(76 5 25 / var(--tw-bg-opacity, 1))}.bg-rose-950\/40{background-color:rgb(76 5 25 / 0.4)}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-white\/80{background-color:rgb(255 255 255 / 0.8)}.bg-gradient-to-br{background-image:linear-gradient(to bottom right, var(--tw-gradient-stops))}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.from-pink-400{--tw-gradient-from:#f472b6 var(--tw-gradient-from-position);--tw-gradient-to:rgb(244 114 182 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-pink-500{--tw-gradient-from:#ec4899 var(--tw-gradient-from-position);--tw-gradient-to:rgb(236 72 153 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-pink-600{--tw-gradient-from:#db2777 var(--tw-gradient-from-position);--tw-gradient-to:rgb(219 39 119 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-rose-500{--tw-gradient-to:rgb(244 63 94 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #f43f5e var(--tw-gradient-via-position), var(--tw-gradient-to)}.to-amber-400{--tw-gradient-to:#fbbf24 var(--tw-gradient-to-position)}.to-amber-500{--tw-gradient-to:#f59e0b var(--tw-gradient-to-position)}.to-rose-400{--tw-gradient-to:#fb7185 var(--tw-gradient-to-position)}.to-rose-500{--tw-gradient-to:#f43f5e var(--tw-gradient-to-position)}.bg-clip-text{-webkit-background-clip:text;background-clip:text}.p-3\.5{padding:0.875rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-2\.5{padding-left:0.625rem;padding-right:0.625rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-3\.5{padding-left:0.875rem;padding-right:0.875rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-8{padding-left:2rem;padding-right:2rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-3\.5{padding-top:0.875rem;padding-bottom:0.875rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.pt-4{padding-top:1rem}.text-left{text-align:left}.text-center{text-align:center}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-5xl{font-size:3rem;line-height:1}.text-\[11px\]{font-size:11px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-relaxed{line-height:1.625}.leading-snug{line-height:1.375}.tracking-tight{letter-spacing:-0.025em}.tracking-wider{letter-spacing:0.05em}.text-amber-600{--tw-text-opacity:1;color:rgb(217 119 6 / var(--tw-text-opacity, 1))}.text-amber-700{--tw-text-opacity:1;color:rgb(180 83 9 / var(--tw-text-opacity, 1))}.text-amber-800{--tw-text-opacity:1;color:rgb(146 64 14 / var(--tw-text-opacity, 1))}.text-emerald-700{--tw-text-opacity:1;color:rgb(4 120 87 / var(--tw-text-opacity, 1))}.text-emerald-800{--tw-text-opacity:1;color:rgb(6 95 70 / var(--tw-text-opacity, 1))}.text-pink-700{--tw-text-opacity:1;color:rgb(190 24 93 / var(--tw-text-opacity, 1))}.text-red-600{--tw-text-opacity:1;color:rgb(220 38 38 / var(--tw-text-opacity, 1))}.text-rose-500{--tw-text-opacity:1;color:rgb(244 63 94 / var(--tw-text-opacity, 1))}.text-rose-600{--tw-text-opacity:1;color:rgb(225 29 72 / var(--tw-text-opacity, 1))}.text-rose-700{--tw-text-opacity:1;color:rgb(190 18 60 / var(--tw-text-opacity, 1))}.text-rose-700\/65{color:rgb(190 18 60 / 0.65)}.text-rose-700\/70{color:rgb(190 18 60 / 0.7)}.text-rose-700\/80{color:rgb(190 18 60 / 0.8)}.text-rose-800{--tw-text-opacity:1;color:rgb(159 18 57 / var(--tw-text-opacity, 1))}.text-rose-800\/80{color:rgb(159 18 57 / 0.8)}.text-rose-800\/85{color:rgb(159 18 57 / 0.85)}.text-rose-900{--tw-text-opacity:1;color:rgb(136 19 55 / var(--tw-text-opacity, 1))}.text-rose-900\/80{color:rgb(136 19 55 / 0.8)}.text-rose-950{--tw-text-opacity:1;color:rgb(76 5 25 / var(--tw-text-opacity, 1))}.text-transparent{color:transparent}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.opacity-0{opacity:0}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-pink-200{--tw-shadow-color:#fbcfe8;--tw-shadow:var(--tw-shadow-colored)}.shadow-pink-500\/25{--tw-shadow-color:rgb(236 72 153 / 0.25);--tw-shadow:var(--tw-shadow-colored)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-200{transition-duration:200ms}.duration-300{transition-duration:300ms}.selection\:bg-pink-200 *::selection{--tw-bg-opacity:1;background-color:rgb(251 207 232 / var(--tw-bg-opacity, 1))}.selection\:text-pink-900 *::selection{--tw-text-opacity:1;color:rgb(131 24 67 / var(--tw-text-opacity, 1))}.selection\:bg-pink-200::selection{--tw-bg-opacity:1;background-color:rgb(251 207 232 / var(--tw-bg-opacity, 1))}.selection\:text-pink-900::selection{--tw-text-opacity:1;color:rgb(131 24 67 / var(--tw-text-opacity, 1))}.placeholder\:text-rose-300::placeholder{--tw-text-opacity:1;color:rgb(253 164 175 / var(--tw-text-opacity, 1))}.hover\:border-pink-300:hover{--tw-border-opacity:1;border-color:rgb(249 168 212 / var(--tw-border-opacity, 1))}.hover\:bg-pink-700:hover{--tw-bg-opacity:1;background-color:rgb(190 24 93 / var(--tw-bg-opacity, 1))}.hover\:bg-rose-100:hover{--tw-bg-opacity:1;background-color:rgb(255 228 230 / var(--tw-bg-opacity, 1))}.hover\:bg-rose-200:hover{--tw-bg-opacity:1;background-color:rgb(254 205 211 / var(--tw-bg-opacity, 1))}.hover\:bg-rose-50:hover{--tw-bg-opacity:1;background-color:rgb(255 241 242 / var(--tw-bg-opacity, 1))}.hover\:bg-rose-600:hover{--tw-bg-opacity:1;background-color:rgb(225 29 72 / var(--tw-bg-opacity, 1))}.hover\:bg-rose-700:hover{--tw-bg-opacity:1;background-color:rgb(190 18 60 / var(--tw-bg-opacity, 1))}.hover\:bg-white:hover{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.hover\:from-pink-600:hover{--tw-gradient-from:#db2777 var(--tw-gradient-from-position);--tw-gradient-to:rgb(219 39 119 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.hover\:to-rose-600:hover{--tw-gradient-to:#e11d48 var(--tw-gradient-to-position)}.hover\:text-pink-900:hover{--tw-text-opacity:1;color:rgb(131 24 67 / var(--tw-text-opacity, 1))}.hover\:text-rose-950:hover{--tw-text-opacity:1;color:rgb(76 5 25 / var(--tw-text-opacity, 1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-pink-400\/50:focus{--tw-ring-color:rgb(244 114 182 / 0.5)}.disabled\:pointer-events-none:disabled{pointer-events:none}.disabled\:opacity-30:disabled{opacity:0.3}@media (min-width: 640px){.sm\:w-32{width:8rem}.sm\:w-40{width:10rem}.sm\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.sm\:flex-row{flex-direction:row}.sm\:p-8{padding:2rem}.sm\:py-10{padding-top:2.5rem;padding-bottom:2.5rem}.sm\:text-2xl{font-size:1.5rem;line-height:2rem}.sm\:text-3xl{font-size:1.875rem;line-height:2.25rem}.sm\:text-6xl{font-size:3.75rem;line-height:1}.sm\:text-lg{font-size:1.125rem;line-height:1.75rem}.sm\:text-sm{font-size:0.875rem;line-height:1.25rem}.sm\:text-xl{font-size:1.25rem;line-height:1.75rem}}</style>
+</head>
+<body class="antialiased selection:bg-pink-200 selection:text-pink-900">
+  <div class="max-w-2xl mx-auto px-4 py-6 sm:py-10 min-h-screen flex flex-col justify-between">
+    <!-- Header -->
+    <header class="flex items-center justify-between mb-6">
+      <div class="flex items-center gap-2.5">
+        <span class="w-9 h-9 rounded-2xl bg-gradient-to-br from-pink-500 to-amber-400 text-white flex items-center justify-center shadow-md shadow-pink-200 text-base font-bold">
+          ⇄
+        </span>
+        <div>
+          <h1 class="text-base sm:text-lg font-bold tracking-tight text-rose-950">双人默契大挑战</h1>
+          <p class="text-xs text-rose-700/70">面对面同屏接力 · 线上暗号/链接接力</p>
+        </div>
+      </div>
+      <button id="openDisclaimerBtn" type="button" class="text-xs font-medium text-rose-700/80 hover:text-rose-950 bg-white/80 hover:bg-white px-3 py-1.5 rounded-full border border-rose-200/70 transition">
+        免责声明
+      </button>
+    </header>
+
+    <!-- Main -->
+    <main class="flex-1 flex flex-col justify-center">
+      <!-- View 1: Home / Mode Selection -->
+      <section id="viewHome" class="glass-card rounded-3xl p-6 sm:p-8 space-y-6 fade-in">
+        <div class="text-center space-y-2">
+          <span class="inline-block text-xs font-semibold text-pink-700 bg-pink-100 px-3 py-1 rounded-full">
+            8 道生活默契考题
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-rose-950">
+            看看你们有多合拍？
+          </h2>
+          <p class="text-sm text-rose-800/80 max-w-md mx-auto leading-relaxed">
+            两个人分别回答同一套关于饮食、作息、消费和约会偏好的问题，最后自动生成默契指数与逐题对比！
+          </p>
+        </div>
+
+        <!-- Mode Tabs -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+          <button id="selectFaceModeBtn" type="button" class="text-left p-4 rounded-2xl border-2 border-pink-500 bg-pink-50/70 transition">
+            <div class="flex items-center justify-between mb-1.5">
+              <span class="text-base font-bold text-rose-950">🤝 面对面同屏接力</span>
+              <span id="badgeFace" class="text-[11px] font-semibold bg-pink-600 text-white px-2 py-0.5 rounded-full">已选</span>
+            </div>
+            <p class="text-xs text-rose-800/80 leading-relaxed">
+              两人在同一台设备上轮流作答，中间自动隐藏答案防偷看，答完立刻揭晓结果。
+            </p>
+          </button>
+
+          <button id="selectLinkModeBtn" type="button" class="text-left p-4 rounded-2xl border-2 border-rose-200/80 bg-white/80 hover:border-pink-300 transition">
+            <div class="flex items-center justify-between mb-1.5">
+              <span class="text-base font-bold text-rose-950">🔗 链接 / 暗号接力</span>
+              <span id="badgeLink" class="text-[11px] font-semibold bg-rose-100 text-rose-600 px-2 py-0.5 rounded-full hidden">已选</span>
+            </div>
+            <p class="text-xs text-rose-800/80 leading-relaxed">
+              你先答完生成专属链接或短暗号发给 TA，异地也能在不同手机上完成合体测算。
+            </p>
+          </button>
+        </div>
+
+        <!-- Nickname Inputs -->
+        <div id="faceNamesBox" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label for="nameAInput" class="block text-xs font-medium text-rose-800/80 mb-1.5">第一位昵称</label>
+            <input id="nameAInput" type="text" maxlength="14" placeholder="例如：小橘" class="w-full px-4 py-2.5 rounded-xl bg-white border border-rose-200 text-sm text-rose-950 placeholder:text-rose-300 focus:outline-none focus:ring-2 focus:ring-pink-400/50" />
+          </div>
+          <div>
+            <label for="nameBInput" class="block text-xs font-medium text-rose-800/80 mb-1.5">第二位昵称</label>
+            <input id="nameBInput" type="text" maxlength="14" placeholder="例如：阿星" class="w-full px-4 py-2.5 rounded-xl bg-white border border-rose-200 text-sm text-rose-950 placeholder:text-rose-300 focus:outline-none focus:ring-2 focus:ring-pink-400/50" />
+          </div>
+        </div>
+
+        <div id="linkNameBox" class="hidden space-y-4">
+          <div>
+            <label for="linkSelfNameInput" class="block text-xs font-medium text-rose-800/80 mb-1.5">你的昵称（将显示在对方的邀请函上）</label>
+            <input id="linkSelfNameInput" type="text" maxlength="14" placeholder="例如：小橘" class="w-full px-4 py-2.5 rounded-xl bg-white border border-rose-200 text-sm text-rose-950 placeholder:text-rose-300 focus:outline-none focus:ring-2 focus:ring-pink-400/50" />
+          </div>
+        </div>
+
+        <button id="startBtn" type="button" class="w-full py-3.5 px-6 rounded-2xl bg-gradient-to-r from-pink-500 via-rose-500 to-amber-500 hover:from-pink-600 hover:to-rose-600 text-white font-semibold text-base shadow-lg shadow-pink-500/25 transition">
+          开始面对面答题
+        </button>
+
+        <!-- Join via Code Box -->
+        <div class="pt-4 border-t border-rose-200/70">
+          <button id="toggleJoinBoxBtn" type="button" class="w-full text-xs font-semibold text-pink-700 hover:text-pink-900 flex items-center justify-center gap-1.5 py-1">
+            <span>💌 已经收到另一半发来的暗号或链接？点这里直接应战</span>
+          </button>
+          <div id="joinBox" class="hidden mt-3 space-y-2.5 bg-rose-50/80 p-4 rounded-2xl border border-rose-200/70">
+            <label for="inviteCodeInput" class="block text-xs font-medium text-rose-900">粘贴对方发来的“默契暗号”或完整分享链接：</label>
+            <div class="flex flex-col sm:flex-row gap-2">
+              <input id="inviteCodeInput" type="text" placeholder="粘贴 SYNC-... 暗号或分享链接" class="flex-1 px-3.5 py-2 rounded-xl bg-white border border-rose-200 text-xs sm:text-sm text-rose-950 focus:outline-none focus:ring-2 focus:ring-pink-400/50" />
+              <button id="parseInviteBtn" type="button" class="px-4 py-2 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs sm:text-sm font-semibold transition">
+                解析并答题
+              </button>
+            </div>
+            <p id="inviteErrorMsg" class="text-xs text-red-600 hidden"></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- View 2: Invite Landing (when opening a shared link) -->
+      <section id="viewInviteLanding" class="glass-card rounded-3xl p-6 sm:p-8 text-center space-y-5 hidden fade-in">
+        <div class="w-14 h-14 mx-auto rounded-2xl bg-gradient-to-br from-pink-500 to-rose-400 text-white flex items-center justify-center text-2xl shadow-md">
+          💌
+        </div>
+        <div class="space-y-2">
+          <span class="inline-block text-xs font-semibold text-pink-700 bg-pink-100 px-3 py-1 rounded-full">双人默契邀请函</span>
+          <h2 id="inviteLandingTitle" class="text-2xl font-bold text-rose-950"></h2>
+          <p class="text-sm text-rose-800/80">回答同样的 8 道题，系统会立刻对比你们的答案并揭晓默契分数！</p>
+        </div>
+        <div class="max-w-xs mx-auto text-left">
+          <label for="inviteReceiverNameInput" class="block text-xs font-medium text-rose-800/80 mb-1.5">输入你的昵称</label>
+          <input id="inviteReceiverNameInput" type="text" maxlength="14" placeholder="例如：阿星" class="w-full px-4 py-2.5 rounded-xl bg-white border border-rose-200 text-sm text-rose-950 focus:outline-none focus:ring-2 focus:ring-pink-400/50" />
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 max-w-sm mx-auto">
+          <button id="acceptInviteBtn" type="button" class="flex-1 py-3 px-5 rounded-2xl bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-semibold text-sm shadow-md transition">
+            接受挑战 · 开始答题
+          </button>
+          <button id="cancelInviteBtn" type="button" class="py-3 px-4 rounded-2xl bg-white border border-rose-200 text-rose-700 text-sm font-medium hover:bg-rose-50 transition">
+            返回首页
+          </button>
+        </div>
+      </section>
+
+      <!-- View 3: Quiz -->
+      <section id="viewQuiz" class="glass-card rounded-3xl p-6 sm:p-8 hidden">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center gap-2">
+            <button id="prevQuestionBtn" type="button" class="text-xs sm:text-sm font-medium text-rose-700 hover:text-rose-950 disabled:opacity-30 disabled:pointer-events-none transition">
+              ← 上一题
+            </button>
+          </div>
+          <div class="flex items-center gap-2">
+            <span id="currentPlayerBadge" class="text-xs font-semibold text-white bg-gradient-to-r from-pink-500 to-rose-500 px-3 py-1 rounded-full"></span>
+            <span id="progressText" class="text-xs font-semibold text-pink-700 bg-pink-50 px-2.5 py-1 rounded-full">1 / 8</span>
+          </div>
+        </div>
+
+        <div class="w-full h-2 bg-rose-100 rounded-full overflow-hidden mb-6">
+          <div id="progressBar" class="h-full bg-gradient-to-r from-pink-400 to-rose-500 rounded-full transition-all duration-300" style="width: 12.5%"></div>
+        </div>
+
+        <div id="questionContainer" class="fade-in">
+          <p id="questionTag" class="text-xs font-semibold text-rose-500 uppercase tracking-wider mb-1.5"></p>
+          <h2 id="questionTitle" class="text-lg sm:text-xl font-bold text-rose-950 leading-snug mb-5"></h2>
+          <div id="optionsList" class="space-y-3"></div>
+        </div>
+      </section>
+
+      <!-- View 4: Face-to-Face Handoff Screen -->
+      <section id="viewHandoff" class="glass-card rounded-3xl p-8 text-center space-y-5 hidden fade-in">
+        <div class="w-16 h-16 mx-auto rounded-full bg-amber-100 text-amber-600 flex items-center justify-center text-3xl">
+          🙈
+        </div>
+        <div class="space-y-2">
+          <h2 id="handoffTitle" class="text-2xl font-bold text-rose-950"></h2>
+          <p class="text-sm text-rose-800/80 max-w-md mx-auto leading-relaxed">
+            为了防止剧透，第一位玩家的答案已经安全锁好！现在请把手机或电脑交给另一半，不要偷看哦～
+          </p>
+        </div>
+        <button id="startPlayerBBtn" type="button" class="px-8 py-3.5 rounded-2xl bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-semibold text-base shadow-lg shadow-pink-500/25 transition">
+          我是第二位，开始答题！
+        </button>
+      </section>
+
+      <!-- View 5: Link/Code Share Screen (for Player A in link mode) -->
+      <section id="viewShareInvite" class="glass-card rounded-3xl p-6 sm:p-8 space-y-5 hidden fade-in">
+        <div class="text-center space-y-2">
+          <span class="inline-block text-xs font-semibold text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full">
+            ✅ 你的答案已封印
+          </span>
+          <h2 class="text-2xl font-bold text-rose-950">把链接或暗号发给另一半吧！</h2>
+          <p class="text-sm text-rose-800/80">对方打开链接（或在首页粘贴暗号）答完 8 道题后，就能立刻看到你们的默契对比报告。</p>
+        </div>
+
+        <div class="space-y-3 bg-rose-50/70 p-4 rounded-2xl border border-rose-200/70">
+          <div>
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-xs font-bold text-rose-900">方式一：复制专属接力暗号（推荐，任意设备通用）</span>
+            </div>
+            <div class="flex gap-2">
+              <input id="generatedCodeBox" type="text" readonly class="flex-1 px-3 py-2 rounded-xl bg-white border border-rose-200 text-xs font-mono text-rose-900" />
+              <button id="copyCodeBtn" type="button" class="px-4 py-2 rounded-xl bg-pink-600 hover:bg-pink-700 text-white text-xs font-semibold transition">
+                复制暗号
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-xs font-bold text-rose-900">方式二：复制完整接力链接</span>
+            </div>
+            <div class="flex gap-2">
+              <input id="generatedLinkBox" type="text" readonly class="flex-1 px-3 py-2 rounded-xl bg-white border border-rose-200 text-xs font-mono text-rose-900" />
+              <button id="copyLinkBtn" type="button" class="px-4 py-2 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs font-semibold transition">
+                复制链接
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-3">
+          <button id="simulatePartnerBtn" type="button" class="flex-1 py-3 px-4 rounded-2xl bg-white hover:bg-rose-50 text-rose-800 font-semibold text-sm border border-rose-200 transition">
+            或者现在切换为 TA 当场答题
+          </button>
+          <button id="backHomeFromShareBtn" type="button" class="sm:w-32 py-3 px-4 rounded-2xl bg-rose-100 hover:bg-rose-200 text-rose-800 font-semibold text-sm transition">
+            返回首页
+          </button>
+        </div>
+      </section>
+
+      <!-- View 6: Final Couple Result -->
+      <section id="viewResult" class="space-y-5 hidden fade-in">
+        <div class="glass-card rounded-3xl p-6 sm:p-8 text-center">
+          <p id="resultPairLabel" class="text-xs font-semibold text-pink-700 bg-pink-100 inline-block px-3 py-1 rounded-full mb-3"></p>
+          <div class="mb-2">
+            <span class="text-xs text-rose-600 font-medium block">双人默契指数</span>
+            <span id="resultScoreNum" class="text-5xl sm:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-600 via-rose-500 to-amber-500"></span>
+          </div>
+          <h2 id="resultRankTitle" class="text-xl sm:text-2xl font-bold text-rose-950 mb-2"></h2>
+          <p id="resultRankDesc" class="text-sm text-rose-800/85 max-w-lg mx-auto leading-relaxed mb-5"></p>
+
+          <div class="grid grid-cols-2 gap-3 text-left max-w-md mx-auto">
+            <div class="bg-emerald-50/80 border border-emerald-200/70 rounded-2xl p-3.5">
+              <span class="block text-xs font-bold text-emerald-800 mb-0.5">✨ 心有灵犀</span>
+              <span id="exactMatchCount" class="text-lg font-bold text-emerald-700"></span>
+            </div>
+            <div class="bg-amber-50/80 border border-amber-200/70 rounded-2xl p-3.5">
+              <span class="block text-xs font-bold text-amber-800 mb-0.5">⚡ 观点碰撞</span>
+              <span id="diffMatchCount" class="text-lg font-bold text-amber-700"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question-by-question comparison -->
+        <div class="glass-card rounded-3xl p-6 sm:p-8 space-y-4">
+          <h3 class="text-base font-bold text-rose-950">📋 逐题默契对照表</h3>
+          <div id="comparisonList" class="space-y-3"></div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-3">
+          <button id="copyFinalResultBtn" type="button" class="flex-1 py-3 px-5 rounded-2xl bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-semibold text-sm shadow-md transition">
+            复制双人默契战绩
+          </button>
+          <button id="playAgainBtn" type="button" class="sm:w-40 py-3 px-5 rounded-2xl bg-white hover:bg-rose-50 text-rose-800 font-semibold text-sm border border-rose-200 transition">
+            再玩一局
+          </button>
+        </div>
+
+        <!-- Disclaimer -->
+        <div class="rounded-2xl bg-white/80 border border-rose-200/80 p-4 text-xs text-rose-800/80 leading-relaxed">
+          <p class="font-bold text-rose-950 mb-1">📌 免责声明</p>
+          <p>
+            本测试仅供情侣或朋友间娱乐互动使用，默契分数与称号基于固定题库比对生成，不代表真实感情深度或心理学评估。每一段关系都独一无二，差异往往也是彼此互补的开始！
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="mt-8 pt-4 border-t border-rose-200/50 text-center text-xs text-rose-700/65">
+      双人默契大挑战 · 答案仅在本地即时比对，不上传任何隐私数据
+    </footer>
+  </div>
+
+  <!-- Disclaimer Modal -->
+  <div id="disclaimerModal" class="fixed inset-0 z-50 bg-rose-950/40 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl border border-rose-100 fade-in">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="text-lg font-bold text-rose-950">免责声明</h3>
+        <button id="closeDisclaimerModal" type="button" class="w-8 h-8 rounded-full bg-rose-50 hover:bg-rose-100 text-rose-700 flex items-center justify-center text-sm font-bold">✕</button>
+      </div>
+      <p class="text-sm text-rose-900/80 leading-relaxed mb-4">
+        本网站的双人默契测试、对比结论与称号均为趣味互动内容，仅供休闲娱乐参考，不具备任何科学或心理学评价效力。无论分数高低，现实中的沟通与互相理解才是感情的关键。所有作答仅保存在当前页面及你主动生成的暗号链接中，不会上传服务器。
+      </p>
+      <button id="confirmDisclaimerModal" type="button" class="w-full py-2.5 rounded-xl bg-rose-500 hover:bg-rose-600 text-white text-sm font-semibold transition">我知道了</button>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-rose-950 text-white text-xs sm:text-sm px-4 py-2.5 rounded-full shadow-lg opacity-0 pointer-events-none transition-opacity duration-200">
+    已复制
+  </div>
+
+  <script>
+    (function () {
+      const QUESTIONS = [
+        {
+          tag: '吃什么世纪难题',
+          title: '周六晚上两个人都懒得做饭，点外卖时最可能达成一致的是？',
+          options: ['热气腾腾的火锅 / 麻辣烫', '精致日料 / 轻食沙拉', '炸鸡汉堡配快乐水', '家常炒菜 / 盖浇饭']
+        },
+        {
+          tag: '作息节奏',
+          title: '如果明天不用早起，你们各自理想的睡觉时间是几点？',
+          options: ['11点前乖乖睡觉', '12点到1点之间', '凌晨2点还在刷手机', '看心情，困了才睡']
+        },
+        {
+          tag: '旅行风格',
+          title: '一起出去旅游，你们更偏向哪种打开方式？',
+          options: ['特种兵式打卡，攻略精确到小时', '睡到自然醒，走到哪逛到哪', '泡在度假酒店里纯躺平', '专程为了某家美食或演出奔赴一座城']
+        },
+        {
+          tag: '空调温度',
+          title: '夏夜开空调盖被子，最舒服的温度设定是？',
+          options: ['22°C—24°C，裹紧被子才爽', '25°C—26°C，刚刚好的舒适区', '27°C—28°C，节能又不会着凉', '不开空调，吹自然风或风扇']
+        },
+        {
+          tag: '吵架冷战',
+          title: '万一因为小事拌嘴了，谁先低头或怎么和好最有效？',
+          options: ['谁先忍不住笑场谁就输', '直接给个抱抱或摸摸头', '各自冷静一会再认真复盘', '点对方最爱喝的奶茶/小吃求和']
+        },
+        {
+          tag: '消费观',
+          title: '看到一个很喜欢但有点小贵的东西（非必需品），通常会？',
+          options: ['千金难买我开心，直接拿下', '加入购物车冷静三天再说', '等打折或凑满减才买', '拉着另一半一起评估值不值得']
+        },
+        {
+          tag: '周末宅家',
+          title: '下雨天不想出门，两个人在家最舒服的相处状态是？',
+          options: ['窝在一起看同一部电影/追剧', '一起开黑打游戏或玩桌游', '各自刷手机干各自的事，但脚搭在一起', '一起收拾房间或研发新菜谱']
+        },
+        {
+          tag: '浪漫偏好',
+          title: '收到对方哪种小举动，会让你瞬间觉得甜度超标？',
+          options: ['毫无预兆的街头牵手和夸夸', '记住我随口一提的小东西并买回来', '深夜回家时留的一盏灯和热汤', '认真写满字的小卡片或长消息']
+        }
+      ];
+
+      // State
+      let mode = 'face'; // 'face' | 'link'
+      let turn = 'A'; // 'A' | 'B'
+      let qIdx = 0;
+      let nameA = '玩家 A';
+      let nameB = '玩家 B';
+      let answersA = new Array(QUESTIONS.length).fill(null);
+      let answersB = new Array(QUESTIONS.length).fill(null);
+
+      // DOM
+      const views = {
+        home: document.getElementById('viewHome'),
+        inviteLanding: document.getElementById('viewInviteLanding'),
+        quiz: document.getElementById('viewQuiz'),
+        handoff: document.getElementById('viewHandoff'),
+        shareInvite: document.getElementById('viewShareInvite'),
+        result: document.getElementById('viewResult')
+      };
+
+      const selectFaceModeBtn = document.getElementById('selectFaceModeBtn');
+      const selectLinkModeBtn = document.getElementById('selectLinkModeBtn');
+      const badgeFace = document.getElementById('badgeFace');
+      const badgeLink = document.getElementById('badgeLink');
+      const faceNamesBox = document.getElementById('faceNamesBox');
+      const linkNameBox = document.getElementById('linkNameBox');
+      const nameAInput = document.getElementById('nameAInput');
+      const nameBInput = document.getElementById('nameBInput');
+      const linkSelfNameInput = document.getElementById('linkSelfNameInput');
+      const startBtn = document.getElementById('startBtn');
+
+      const toggleJoinBoxBtn = document.getElementById('toggleJoinBoxBtn');
+      const joinBox = document.getElementById('joinBox');
+      const inviteCodeInput = document.getElementById('inviteCodeInput');
+      const parseInviteBtn = document.getElementById('parseInviteBtn');
+      const inviteErrorMsg = document.getElementById('inviteErrorMsg');
+
+      const inviteLandingTitle = document.getElementById('inviteLandingTitle');
+      const inviteReceiverNameInput = document.getElementById('inviteReceiverNameInput');
+      const acceptInviteBtn = document.getElementById('acceptInviteBtn');
+      const cancelInviteBtn = document.getElementById('cancelInviteBtn');
+
+      const prevQuestionBtn = document.getElementById('prevQuestionBtn');
+      const currentPlayerBadge = document.getElementById('currentPlayerBadge');
+      const progressText = document.getElementById('progressText');
+      const progressBar = document.getElementById('progressBar');
+      const questionContainer = document.getElementById('questionContainer');
+      const questionTag = document.getElementById('questionTag');
+      const questionTitle = document.getElementById('questionTitle');
+      const optionsList = document.getElementById('optionsList');
+
+      const handoffTitle = document.getElementById('handoffTitle');
+      const startPlayerBBtn = document.getElementById('startPlayerBBtn');
+
+      const generatedCodeBox = document.getElementById('generatedCodeBox');
+      const generatedLinkBox = document.getElementById('generatedLinkBox');
+      const copyCodeBtn = document.getElementById('copyCodeBtn');
+      const copyLinkBtn = document.getElementById('copyLinkBtn');
+      const simulatePartnerBtn = document.getElementById('simulatePartnerBtn');
+      const backHomeFromShareBtn = document.getElementById('backHomeFromShareBtn');
+
+      const resultPairLabel = document.getElementById('resultPairLabel');
+      const resultScoreNum = document.getElementById('resultScoreNum');
+      const resultRankTitle = document.getElementById('resultRankTitle');
+      const resultRankDesc = document.getElementById('resultRankDesc');
+      const exactMatchCount = document.getElementById('exactMatchCount');
+      const diffMatchCount = document.getElementById('diffMatchCount');
+      const comparisonList = document.getElementById('comparisonList');
+      const copyFinalResultBtn = document.getElementById('copyFinalResultBtn');
+      const playAgainBtn = document.getElementById('playAgainBtn');
+
+      const disclaimerModal = document.getElementById('disclaimerModal');
+      const openDisclaimerBtn = document.getElementById('openDisclaimerBtn');
+      const closeDisclaimerModal = document.getElementById('closeDisclaimerModal');
+      const confirmDisclaimerModal = document.getElementById('confirmDisclaimerModal');
+      const toast = document.getElementById('toast');
+
+      function showView(key) {
+        Object.values(views).forEach((v) => v.classList.add('hidden'));
+        views[key].classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      function showToast(msg) {
+        toast.textContent = msg;
+        toast.classList.remove('opacity-0');
+        toast.classList.add('opacity-100');
+        setTimeout(() => {
+          toast.classList.remove('opacity-100');
+          toast.classList.add('opacity-0');
+        }, 2200);
+      }
+
+      function copyText(text, successMsg) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(() => showToast(successMsg)).catch(() => fallbackCopy(text, successMsg));
+        } else {
+          fallbackCopy(text, successMsg);
+        }
+      }
+
+      function fallbackCopy(text, successMsg) {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try {
+          document.execCommand('copy');
+          showToast(successMsg);
+        } catch (e) {
+          showToast('请手动长按输入框复制');
+        }
+        document.body.removeChild(ta);
+      }
+
+      // UTF-8 safe base64 encode/decode for invite codes
+      function encodeInvitePayload(name, ansArr) {
+        const raw = JSON.stringify({ n: name, a: ansArr });
+        const b64 = btoa(unescape(encodeURIComponent(raw)));
+        return 'SYNC-' + b64;
+      }
+
+      function decodeInvitePayload(inputStr) {
+        let token = (inputStr || '').trim();
+        if (!token) return null;
+        if (token.includes('invite=')) {
+          const match = token.match(/invite=([^&#\s]+)/);
+          if (match) token = decodeURIComponent(match[1]);
+        }
+        if (token.startsWith('SYNC-')) {
+          token = token.slice(5);
+        }
+        try {
+          const jsonStr = decodeURIComponent(escape(atob(token)));
+          const parsed = JSON.parse(jsonStr);
+          if (parsed && Array.isArray(parsed.a) && parsed.a.length === QUESTIONS.length) {
+            return { name: String(parsed.n || '神秘队友'), answers: parsed.a.map(Number) };
+          }
+        } catch (e) {
+          return null;
+        }
+        return null;
+      }
+
+      function updateModeUI() {
+        if (mode === 'face') {
+          selectFaceModeBtn.className = 'text-left p-4 rounded-2xl border-2 border-pink-500 bg-pink-50/70 transition';
+          selectLinkModeBtn.className = 'text-left p-4 rounded-2xl border-2 border-rose-200/80 bg-white/80 hover:border-pink-300 transition';
+          badgeFace.classList.remove('hidden');
+          badgeLink.classList.add('hidden');
+          faceNamesBox.classList.remove('hidden');
+          linkNameBox.classList.add('hidden');
+          startBtn.textContent = '开始面对面答题';
+        } else {
+          selectLinkModeBtn.className = 'text-left p-4 rounded-2xl border-2 border-pink-500 bg-pink-50/70 transition';
+          selectFaceModeBtn.className = 'text-left p-4 rounded-2xl border-2 border-rose-200/80 bg-white/80 hover:border-pink-300 transition';
+          badgeLink.classList.remove('hidden');
+          badgeFace.classList.add('hidden');
+          linkNameBox.classList.remove('hidden');
+          faceNamesBox.classList.add('hidden');
+          startBtn.textContent = '先答我的部分并生成链接';
+        }
+      }
+
+      function renderQuestion() {
+        const q = QUESTIONS[qIdx];
+        const total = QUESTIONS.length;
+        const currentAnsArr = turn === 'A' ? answersA : answersB;
+        const currentName = turn === 'A' ? nameA : nameB;
+
+        currentPlayerBadge.textContent = `${currentName} 作答中`;
+        progressText.textContent = `${qIdx + 1} / ${total}`;
+        progressBar.style.width = `${((qIdx + 1) / total) * 100}%`;
+        prevQuestionBtn.disabled = qIdx === 0;
+
+        questionTag.textContent = `第 ${qIdx + 1} 题 · ${q.tag}`;
+        questionTitle.textContent = q.title;
+        optionsList.innerHTML = '';
+
+        q.options.forEach((optText, idx) => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          const isSelected = currentAnsArr[qIdx] === idx;
+          btn.className = `option-btn w-full text-left p-4 rounded-2xl border ${
+            isSelected ? 'selected border-pink-600' : 'border-rose-200/80 bg-white/90'
+          } flex items-center gap-3`;
+
+          const letter = String.fromCharCode(65 + idx);
+          btn.innerHTML = `
+            <span class="w-6 h-6 rounded-full flex-shrink-0 flex items-center justify-center text-xs font-bold ${
+              isSelected ? 'bg-pink-600 text-white' : 'bg-rose-100 text-rose-700'
+            }">${letter}</span>
+            <span class="text-sm sm:text-base text-rose-950 leading-relaxed">${optText}</span>
+          `;
+
+          btn.addEventListener('click', () => {
+            currentAnsArr[qIdx] = idx;
+            renderQuestion();
+            setTimeout(() => {
+              if (qIdx < QUESTIONS.length - 1) {
+                qIdx += 1;
+                questionContainer.classList.remove('fade-in');
+                void questionContainer.offsetWidth;
+                questionContainer.classList.add('fade-in');
+                renderQuestion();
+              } else {
+                finishTurn();
+              }
+            }, 170);
+          });
+
+          optionsList.appendChild(btn);
+        });
+      }
+
+      function finishTurn() {
+        if (turn === 'A') {
+          if (mode === 'face') {
+            handoffTitle.textContent = `${nameA} 已完成答题！`;
+            showView('handoff');
+          } else {
+            const code = encodeInvitePayload(nameA, answersA);
+            const baseUrl = window.location.href.split('#')[0].split('?')[0];
+            const shareUrl = `${baseUrl}#invite=${encodeURIComponent(code)}`;
+            generatedCodeBox.value = code;
+            generatedLinkBox.value = shareUrl;
+            showView('shareInvite');
+          }
+        } else {
+          renderResult();
+          showView('result');
+        }
+      }
+
+      function renderResult() {
+        let exact = 0;
+        comparisonList.innerHTML = '';
+
+        QUESTIONS.forEach((q, i) => {
+          const aIdx = answersA[i] ?? 0;
+          const bIdx = answersB[i] ?? 0;
+          const isSame = aIdx === bIdx;
+          if (isSame) exact += 1;
+
+          const card = document.createElement('div');
+          card.className = `p-4 rounded-2xl border ${
+            isSame ? 'bg-emerald-50/50 border-emerald-200/70' : 'bg-white/85 border-rose-200/70'
+          }`;
+          card.innerHTML = `
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="text-xs font-bold text-rose-900">Q${i + 1} · ${q.tag}</span>
+              <span class="text-[11px] font-semibold px-2.5 py-0.5 rounded-full ${
+                isSame ? 'bg-emerald-100 text-emerald-700' : 'bg-amber-100 text-amber-700'
+              }">${isSame ? '💖 完全一致' : '⚡ 各有想法'}</span>
+            </div>
+            <p class="text-xs text-rose-800/80 mb-2.5">${q.title}</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+              <div class="bg-white/90 rounded-xl p-2.5 border border-rose-100">
+                <span class="font-semibold text-pink-700">${nameA}：</span>
+                <span class="text-rose-950">${q.options[aIdx]}</span>
+              </div>
+              <div class="bg-white/90 rounded-xl p-2.5 border border-rose-100">
+                <span class="font-semibold text-amber-700">${nameB}：</span>
+                <span class="text-rose-950">${q.options[bIdx]}</span>
+              </div>
+            </div>
+          `;
+          comparisonList.appendChild(card);
+        });
+
+        const diff = QUESTIONS.length - exact;
+        const score = Math.round((exact / QUESTIONS.length) * 100);
+
+        resultPairLabel.textContent = `${nameA} × ${nameB}`;
+        resultScoreNum.textContent = `${score}%`;
+        exactMatchCount.textContent = `${exact} / ${QUESTIONS.length} 题`;
+        diffMatchCount.textContent = `${diff} / ${QUESTIONS.length} 题`;
+
+        let rankTitle = '';
+        let rankDesc = '';
+        if (score >= 85) {
+          rankTitle = '心有灵犀天花板 · 灵魂双胞胎';
+          rankDesc = '你们的日常习惯和恋爱雷达几乎完全重叠，很多事不用开口就能秒懂对方，是让人羡慕的高甜合拍组合！';
+        } else if (score >= 60) {
+          rankTitle = '高甜默契搭档 · 越处越合拍';
+          rankDesc = '大方向高度一致，偶尔的一点小分歧反而成了生活里互相调侃的可爱调味剂，在一起既舒服又有新鲜感。';
+        } else if (score >= 35) {
+          rankTitle = '欢喜冤家 · 互补型神仙组合';
+          rankDesc = '你们看世界和享受生活的方式各有特色！一个稳重一个跳脱，正好把彼此的生活拼图补得满满当当。';
+        } else {
+          rankTitle = '反差感满分 · 奇妙冒险二人组';
+          rankDesc = '虽然选项截然不同，但正因如此每天都有新惊喜！多听听对方为什么这样选，往往能发现全新的快乐。';
+        }
+
+        resultRankTitle.textContent = rankTitle;
+        resultRankDesc.textContent = rankDesc;
+      }
+
+      // Event Listeners
+      selectFaceModeBtn.addEventListener('click', () => {
+        mode = 'face';
+        updateModeUI();
+      });
+
+      selectLinkModeBtn.addEventListener('click', () => {
+        mode = 'link';
+        updateModeUI();
+      });
+
+      startBtn.addEventListener('click', () => {
+        turn = 'A';
+        qIdx = 0;
+        answersA = new Array(QUESTIONS.length).fill(null);
+        answersB = new Array(QUESTIONS.length).fill(null);
+
+        if (mode === 'face') {
+          nameA = nameAInput.value.trim() || '第一位玩家';
+          nameB = nameBInput.value.trim() || '第二位玩家';
+        } else {
+          nameA = linkSelfNameInput.value.trim() || '发起挑战的我';
+          nameB = '接力的小伙伴';
+        }
+        renderQuestion();
+        showView('quiz');
+      });
+
+      prevQuestionBtn.addEventListener('click', () => {
+        if (qIdx > 0) {
+          qIdx -= 1;
+          renderQuestion();
+        }
+      });
+
+      startPlayerBBtn.addEventListener('click', () => {
+        turn = 'B';
+        qIdx = 0;
+        renderQuestion();
+        showView('quiz');
+      });
+
+      simulatePartnerBtn.addEventListener('click', () => {
+        mode = 'face';
+        nameB = nameBInput.value.trim() || '另一半';
+        turn = 'B';
+        qIdx = 0;
+        renderQuestion();
+        showView('quiz');
+      });
+
+      backHomeFromShareBtn.addEventListener('click', () => {
+        showView('home');
+      });
+
+      copyCodeBtn.addEventListener('click', () => {
+        copyText(generatedCodeBox.value, '默契暗号已复制，快发给 TA 吧！');
+      });
+
+      copyLinkBtn.addEventListener('click', () => {
+        copyText(generatedLinkBox.value, '接力链接已复制！');
+      });
+
+      toggleJoinBoxBtn.addEventListener('click', () => {
+        joinBox.classList.toggle('hidden');
+        inviteErrorMsg.classList.add('hidden');
+      });
+
+      parseInviteBtn.addEventListener('click', () => {
+        const parsed = decodeInvitePayload(inviteCodeInput.value);
+        if (!parsed) {
+          inviteErrorMsg.textContent = '暗号或链接格式好像不太对，请确认是否完整复制哦。';
+          inviteErrorMsg.classList.remove('hidden');
+          return;
+        }
+        inviteErrorMsg.classList.add('hidden');
+        nameA = parsed.name;
+        answersA = parsed.answers;
+        inviteLandingTitle.textContent = `${nameA} 邀请你一起测默契！`;
+        showView('inviteLanding');
+      });
+
+      acceptInviteBtn.addEventListener('click', () => {
+        mode = 'link';
+        nameB = inviteReceiverNameInput.value.trim() || '我';
+        turn = 'B';
+        qIdx = 0;
+        answersB = new Array(QUESTIONS.length).fill(null);
+        renderQuestion();
+        showView('quiz');
+      });
+
+      cancelInviteBtn.addEventListener('click', () => {
+        try {
+          history.replaceState(null, '', window.location.pathname);
+        } catch (e) {}
+        showView('home');
+      });
+
+      copyFinalResultBtn.addEventListener('click', () => {
+        const text = `【双人默契大挑战】\n${nameA} × ${nameB} 的默契指数是 ${resultScoreNum.textContent}！\n称号：${resultRankTitle.textContent}\n心有灵犀：${exactMatchCount.textContent}\n（*仅供娱乐互动参考）`;
+        copyText(text, '双人默契战绩已复制！');
+      });
+
+      playAgainBtn.addEventListener('click', () => {
+        try {
+          history.replaceState(null, '', window.location.pathname);
+        } catch (e) {}
+        showView('home');
+      });
+
+      function openModal() {
+        disclaimerModal.classList.remove('hidden');
+        disclaimerModal.classList.add('flex');
+      }
+      function closeModal() {
+        disclaimerModal.classList.add('hidden');
+        disclaimerModal.classList.remove('flex');
+      }
+      openDisclaimerBtn.addEventListener('click', openModal);
+      closeDisclaimerModal.addEventListener('click', closeModal);
+      confirmDisclaimerModal.addEventListener('click', closeModal);
+      disclaimerModal.addEventListener('click', (e) => {
+        if (e.target === disclaimerModal) closeModal();
+      });
+
+      // Check URL hash/query on load for invite link
+      function checkIncomingInvite() {
+        const hash = window.location.hash || '';
+        const search = window.location.search || '';
+        const candidate = hash.includes('invite=') ? hash : (search.includes('invite=') ? search : '');
+        if (candidate) {
+          const parsed = decodeInvitePayload(candidate);
+          if (parsed) {
+            nameA = parsed.name;
+            answersA = parsed.answers;
+            inviteLandingTitle.textContent = `${nameA} 邀请你一起测默契！`;
+            showView('inviteLanding');
+          }
+        }
+      }
+
+      updateModeUI();
+      checkIncomingInvite();
+    })();
+  </script>
+</body>
+</html>
